@@ -1,0 +1,853 @@
+{% extends "base.html" %}
+{% load staticfiles i18n compress%}
+
+{% block content %}
+<h1>Water & Waste Water Companies</h1>
+
+{% compress js %}
+<script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'js/community.js' %}"></script>
+{% endcompress %}
+
+<ul class="nav nav-tabs" role="tablist" id="company-tab">
+  <li role="presentation" id="profile-li"
+      class="active"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Enter your postcode now to find deals in your area</a></li>
+  <li role="presentation" id="companies-li">
+    <a href="#companies" aria-controls="companies" role="tab" data-toggle="tab">Select water companies (Choose & Compare)</a>
+  </li>
+  <li role="presentation" id="comparision-li"><a href="#comparision" aria-controls="comparision" role="tab" data-toggle="tab">Comparison</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="profile">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="inputEmail">Email address</label>
+          <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group row">
+          <label for="postcode-text-input">Postcode</label>
+          <input class="form-control" type="text" id="postcode-text-input" placeholder="Postcode">
+        </div>
+        <div class="form-group row">
+          <label for="supplier-text-input">Your current supplier</label>
+          <input class="form-control" type="text" id="supplier-text-input" placeholder="Your current supplier">
+        </div>
+        <a href="#companies" aria-controls="companies" class="btn btn-primary" role="tab" data-toggle="tab" id="profile-submit">Submit</a>
+      </div>
+      <div class="col-sm-6">
+        <img alt="" src="{% static 'images/water-saving.png' %}" width="200" height="200" data-di-width="200" data-di-height="200">
+      </div>
+    </div>
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="companies">
+    <nav class="navbar company-filters">
+      <div class="container">
+        <div class="collapse navbar-toggleable-xs" id="bs-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-sort-value="price">Price</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-sort-value="service">Customer Service</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-sort-value="community">Community Engagement</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-sort-value="employer">Employer Ranking</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-sort-value="social">Social Impact</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="row">
+      <div class="col-sm-10">
+        <div class="reviews-category grid">
+          <div class="element-item cheap post-block-content" data-id="thames" data-category="cheap">
+            <div class="full first" style="margin-bottom: 0;">
+              <div class="post-block-featured-image">
+                <img src="{% static 'images/samplee-9-1024x682-2y1qwn0kd3na87jky4hbey.png' %}" alt="">
+                <div class="post-block-featured-image-shadow"></div>
+              </div>
+            </div>
+            <div class="post-block-title">
+              <div class="overview_stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+              </div>
+              <h2>Thames Water</h2>
+            </div>
+            <div class="full review_rating_category_view">
+              <div class="full">
+                Thames Water
+              </div>
+              <div class="blog-post-meta full">
+                <span class="post-block-comment metaboxx">Price</span>
+                <span class="post-block-ratingstars metaboxx"><span class="price">1</span> £</span>
+              </div>
+              <div class="rating-review-category-wrapper">
+                <div class="review-title-category full">
+                  <h6><strong>4.6</strong> Overall rating
+                    <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+                  </h6>
+                </div>
+                <div class="criteria-wrapper-category full">
+                  <div class="criteria-category first ">
+                    <span class="criteria-text-category"><b>Customer Service</b></span>
+                    <span class="score-text-category"><span class="service">4</span></span>
+                  </div>
+                  <div class="criteria-category ">
+                    <span class="criteria-text-category"><b>Community Engagement</b></span>
+                    <span class="community">3</span>
+                  </div>
+                  <div class="criteria-category first ">
+                    <span class="criteria-text-category"><b>Employer Ranking</b></span>
+                    <span class="employer">8</span>
+                  </div>
+                  <div class="criteria-category ">
+                    <span class="criteria-text-category"><b>Social Impact</b></span>
+                    <span class="score-text-category"><span class="social">3</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="element-item post-block-content" data-id="water2business">
+            <div class="full first" style="margin-bottom: 0;">
+              <div class="post-block-featured-image">
+                <img src="{% static 'images/samplee-4-1024x680-2y1bvxfha1yg4p6pv6tedm.jpg' %}" alt="">
+                <div class="post-block-featured-image-shadow"></div>
+              </div>
+            </div>
+            <div class="post-block-title">
+              <div class="overview_stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+              </div>
+              <h2>Water 2 business</h2>
+            </div>
+            <div class="full review_rating_category_view">
+              <div class="full">
+                Water 2 business
+              </div>
+              <div class="blog-post-meta full">
+                <span class="post-block-comment metaboxx">Price</span>
+                <span class="post-block-ratingstars metaboxx"><span class="price">2</span> £</span>
+              </div>
+              <div class="rating-review-category-wrapper">
+                <div class="review-title-category full">
+                  <h6><strong>4.6</strong> Overall rating
+                    <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+                  </h6>
+                </div>
+                <div class="criteria-wrapper-category full">
+                  <div class="criteria-category first ">
+                    <span class="criteria-text-category"><b>Customer Service</b></span>
+                    <span class="score-text-category"><span class="service">3</span></span>
+                  </div>
+                  <div class="criteria-category ">
+                    <span class="criteria-text-category"><b>Community Engagement</b></span>
+                    <span class="community">4</span>
+                  </div>
+                  <div class="criteria-category first ">
+                    <span class="criteria-text-category"><b>Employer Ranking</b></span>
+                    <span class="employer">7</span>
+                  </div>
+                  <div class="criteria-category ">
+                    <span class="criteria-text-category"><b>Social Impact</b></span>
+                    <span class="score-text-category"><span class="social">5</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="element-item cheap post-block-content" data-id="affinity" data-category="cheap">
+            <div class="full first" style="margin-bottom: 0;">
+              <div class="post-block-featured-image">
+                <img src="{% static 'images/image-17-1024x682-2y1rqs4f7upir5sjb13vnu.jpg' %}" alt="">
+                <div class="post-block-featured-image-shadow"></div>
+              </div>
+            </div>
+            <div class="post-block-title">
+              <div class="overview_stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+              </div>
+              <h2>Affinity Water</h2>
+            </div>
+            <div class="full review_rating_category_view">
+              <div class="full">
+                Affinity Water
+              </div>
+              <div class="blog-post-meta full">
+                <span class="post-block-comment metaboxx">Price</span>
+                <span class="post-block-ratingstars metaboxx"><span class="price">3</span> £</span>
+              </div>
+              <div class="rating-review-category-wrapper">
+                <div class="review-title-category full">
+                  <h6><strong>4.6</strong> Overall rating
+                    <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+                  </h6>
+                </div>
+                <div class="criteria-wrapper-category full">
+                  <div class="criteria-category first ">
+                    <span class="criteria-text-category"><b>Customer Service</b></span>
+                    <span class="score-text-category"><span class="service">8</span></span>
+                  </div>
+                  <div class="criteria-category ">
+                    <span class="criteria-text-category"><b>Community Engagement</b></span>
+                    <span class="community">6</span>
+                  </div>
+                  <div class="criteria-category first ">
+                    <span class="criteria-text-category"><b>Employer Ranking</b></span>
+                    <span class="employer">5</span>
+                  </div>
+                  <div class="criteria-category ">
+                    <span class="criteria-text-category"><b>Social Impact</b></span>
+                    <span class="score-text-category"><span class="social">4</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="element-item cheap post-block-content" data-id="sutton" data-category="cheap">
+            <div class="full first" style="margin-bottom: 0;">
+              <div class="post-block-featured-image">
+                <img src="{% static 'images/samplee-24-1024x682-2y1qi7gex9nmjm0n9700zu.jpg' %}" alt="">
+                <div class="post-block-featured-image-shadow"></div>
+              </div>
+            </div>
+            <div class="post-block-title">
+              <div class="overview_stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+              </div>
+              <h2>Sutton and East Surrey Water</h2>
+            </div>
+            <div class="full review_rating_category_view">
+              <div class="full">
+                Sutton and East Surrey Water
+              </div>
+              <div class="blog-post-meta full">
+                <span class="post-block-comment metaboxx">Price</span>
+                <span class="post-block-ratingstars metaboxx"><span class="price">4</span> £</span>
+              </div>
+              <div class="rating-review-category-wrapper">
+                <div class="review-title-category full">
+                  <h6><strong>4.6</strong> Overall rating
+                    <span class="aright">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star-half-o"></i>
+                    </span>
+                  </h6>
+                </div>
+                <div class="criteria-wrapper-category full">
+                  <div class="criteria-category first ">
+                    <span class="criteria-text-category"><b>Customer Service</b></span>
+                    <span class="score-text-category"><span class="service">7</span></span>
+                  </div>
+                  <div class="criteria-category ">
+                    <span class="criteria-text-category"><b>Community Engagement</b></span>
+                    <span class="community">2</span>
+                  </div>
+                  <div class="criteria-category first ">
+                    <span class="criteria-text-category"><b>Employer Ranking</b></span>
+                    <span class="employer">1</span>
+                  </div>
+                  <div class="criteria-category ">
+                    <span class="criteria-text-category"><b>Social Impact</b></span>
+                    <span class="score-text-category"><span class="social">1</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="element-item post-block-content" data-id="essex">
+            <div class="full first" style="margin-bottom: 0;">
+              <div class="post-block-featured-image">
+                <img src="{% static 'images/placeholder-11-1024x678-2y1qj8ruu5yjy0pkngwrnu.jpg' %}" alt="">
+                <div class="post-block-featured-image-shadow"></div>
+              </div>
+            </div>
+            <div class="post-block-title">
+              <div class="overview_stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+              </div>
+              <h2>Essex&Suffolk water</h2>
+            </div>
+            <div class="full review_rating_category_view">
+              <div class="full">
+                Essex&Suffolk water
+              </div>
+              <div class="blog-post-meta full">
+                <span class="post-block-comment metaboxx">Price</span>
+                <span class="post-block-ratingstars metaboxx"><span class="price">5</span> £</span>
+              </div>
+              <div class="rating-review-category-wrapper">
+                <div class="review-title-category full">
+                  <h6><strong>4.6</strong> Overall rating
+                    <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+                  </h6>
+                </div>
+                <div class="criteria-wrapper-category full">
+                  <div class="criteria-category first ">
+                    <span class="criteria-text-category"><b>Customer Service</b></span>
+                    <span class="score-text-category"><span class="service">6</span></span>
+                  </div>
+                  <div class="criteria-category ">
+                    <span class="criteria-text-category"><b>Community Engagement</b></span>
+                    <span class="community">1</span>
+                  </div>
+                  <div class="criteria-category first ">
+                    <span class="criteria-text-category"><b>Employer Ranking</b></span>
+                    <span class="employer">3</span>
+                  </div>
+                  <div class="criteria-category ">
+                    <span class="criteria-text-category"><b>Social Impact</b></span>
+                    <span class="score-text-category"><span class="social">2</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="element-item post-block-content" data-id="water">
+            <div class="full first" style="margin-bottom: 0;">
+              <div class="post-block-featured-image">
+                <img src="{% static 'images/samplee-7-1024x682-2y1qxixi3f144j50s5fv2i.jpg' %}" alt="">
+                <div class="post-block-featured-image-shadow"></div>
+              </div>
+            </div>
+            <div class="post-block-title">
+              <div class="overview_stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+              </div>
+              <h2>Water Plus</h2>
+            </div>
+            <div class="full review_rating_category_view">
+              <div class="full">
+                Water Plus
+              </div>
+              <div class="blog-post-meta full">
+                <span class="post-block-comment metaboxx">Price</span>
+                <span class="post-block-ratingstars metaboxx"><span class="price">6</span> £</span>
+              </div>
+              <div class="rating-review-category-wrapper">
+                <div class="review-title-category full">
+                  <h6><strong>4.6</strong> Overall rating
+                    <span class="aright">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star-half-o"></i>
+                    </span>
+                  </h6>
+                </div>
+                <div class="criteria-wrapper-category full">
+                  <div class="criteria-category first ">
+                    <span class="criteria-text-category"><b>Customer Service</b></span>
+                    <span class="score-text-category"><span class="service">5</span></span>
+                  </div>
+                  <div class="criteria-category ">
+                    <span class="criteria-text-category"><b>Community Engagement</b></span>
+                    <span class="community">8</span>
+                  </div>
+                  <div class="criteria-category first ">
+                    <span class="criteria-text-category"><b>Employer Ranking</b></span>
+                    <span class="employer">2</span>
+                  </div>
+                  <div class="criteria-category ">
+                    <span class="criteria-text-category"><b>Social Impact</b></span>
+                    <span class="score-text-category"><span class="social">6</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="element-item post-block-content" data-id="business">
+            <div class="full first" style="margin-bottom: 0;">
+              <div class="post-block-featured-image">
+                <img src="{% static 'images/BusinessStream.jpg' %}" alt="">
+                <div class="post-block-featured-image-shadow"></div>
+              </div>
+            </div>
+            <div class="post-block-title">
+              <div class="overview_stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+              </div>
+              <h2>BusinessStream</h2>
+            </div>
+            <div class="full review_rating_category_view">
+              <div class="full">
+                BusinessStream
+              </div>
+              <div class="blog-post-meta full">
+                <span class="post-block-comment metaboxx">Price</span>
+                <span class="post-block-ratingstars metaboxx"><span class="price">7</span> £</span>
+              </div>
+              <div class="rating-review-category-wrapper">
+                <div class="review-title-category full">
+                  <h6><strong>4.6</strong> Overall rating
+                    <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+                  </h6>
+                </div>
+                <div class="criteria-wrapper-category full">
+                  <div class="criteria-category first ">
+                    <span class="criteria-text-category"><b>Customer Service</b></span>
+                    <span class="score-text-category"><span class="service">2</span></span>
+                  </div>
+                  <div class="criteria-category ">
+                    <span class="criteria-text-category"><b>Community Engagement</b></span>
+                    <span class="community">7</span>
+                  </div>
+                  <div class="criteria-category first ">
+                    <span class="criteria-text-category"><b>Employer Ranking</b></span>
+                    <span class="employer">6</span>
+                  </div>
+                  <div class="criteria-category ">
+                    <span class="criteria-text-category"><b>Social Impact</b></span>
+                    <span class="score-text-category"><span class="social">7</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="element-item post-block-content" data-id="waterscan">
+            <div class="full first" style="margin-bottom: 0;">
+              <div class="post-block-featured-image">
+                <img src="{% static 'images/waterscan-logo.png' %}" alt="">
+                <div class="post-block-featured-image-shadow"></div>
+              </div>
+            </div>
+            <div class="post-block-title">
+              <div class="overview_stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+              </div>
+              <h2>Waterscan</h2>
+            </div>
+            <div class="full review_rating_category_view">
+              <div class="full">
+                Waterscan
+              </div>
+              <div class="blog-post-meta full">
+                <span class="post-block-comment metaboxx">Price</span>
+                <span class="post-block-ratingstars metaboxx"><span class="price">8</span> £</span>
+              </div>
+              <div class="rating-review-category-wrapper">
+                <div class="review-title-category full">
+                  <h6><strong>4.6</strong> Overall rating
+                    <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+                  </h6>
+                </div>
+                <div class="criteria-wrapper-category full">
+                  <div class="criteria-category first ">
+                    <span class="criteria-text-category"><b>Customer Service</b></span>
+                    <span class="score-text-category"><span class="service">1</span></span>
+                  </div>
+                  <div class="criteria-category ">
+                    <span class="criteria-text-category"><b>Community Engagement</b></span>
+                    <span class="community">5</span>
+                  </div>
+                  <div class="criteria-category first ">
+                    <span class="criteria-text-category"><b>Employer Ranking</b></span>
+                    <span class="employer">4</span>
+                  </div>
+                  <div class="criteria-category ">
+                    <span class="criteria-text-category"><b>Social Impact</b></span>
+                    <span class="score-text-category"><span class="social">8</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <h5>Selected:</h5>
+        <ul id="selected-company">
+        </ul>
+        <a href="#comparision" aria-controls="comparision" role="tab" data-toggle="tab" class="btn btn-primary" id="comparision-submit">Compare</a>
+      </div>
+    </div>
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="comparision">
+    <div class="card" id="thames" style="display: none">
+      <div class="card-block">
+        <h4 class="card-title">Thames Water</h4>
+        <div class="rating-review-category-wrapper">
+          <div class="review-title-category full">
+            <h6><strong>4.6</strong> Overall rating
+              <span class="aright">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+              </span>
+            </h6>
+          </div>
+          <div class="criteria-wrapper-category full">
+            <div class="criteria-category first ">
+              <span class="criteria-text-category"><b>Customer Service</b></span>
+              <span class="score-text-category"><span class="service">4</span></span>
+            </div>
+            <div class="criteria-category ">
+              <span class="criteria-text-category"><b>Community Engagement</b></span>
+              <span class="community">3</span>
+            </div>
+            <div class="criteria-category first ">
+              <span class="criteria-text-category"><b>Employer Ranking</b></span>
+              <span class="employer">8</span>
+            </div>
+            <div class="criteria-category ">
+              <span class="criteria-text-category"><b>Social Impact</b></span>
+              <span class="score-text-category"><span class="social">3</span></span>
+            </div>
+          </div>
+        </div>
+        <a href="http://www.thameswater.co.uk/" target="_blank" class="btn btn-primary">Go to site</a>
+      </div>
+    </div>
+    <div class="card" id="water2business" style="display: none">
+      <div class="card-block">
+        <h4 class="card-title">Water 2 business</h4>
+        <div class="rating-review-category-wrapper">
+          <div class="review-title-category full">
+            <h6><strong>4.6</strong> Overall rating
+              <span class="aright">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+              </span>
+            </h6>
+          </div>
+          <div class="criteria-wrapper-category full">
+            <div class="criteria-category first ">
+              <span class="criteria-text-category"><b>Customer Service</b></span>
+              <span class="score-text-category"><span class="service">3</span></span>
+            </div>
+            <div class="criteria-category ">
+              <span class="criteria-text-category"><b>Community Engagement</b></span>
+              <span class="community">4</span>
+            </div>
+            <div class="criteria-category first ">
+              <span class="criteria-text-category"><b>Employer Ranking</b></span>
+              <span class="employer">7</span>
+            </div>
+            <div class="criteria-category ">
+              <span class="criteria-text-category"><b>Social Impact</b></span>
+              <span class="score-text-category"><span class="social">5</span></span>
+            </div>
+          </div>
+        </div>
+        <a href="http://water2business.co.uk/" target="_blank" class="btn btn-primary">Go to site</a>
+      </div>
+    </div>
+    <div class="card" id="affinity" style="display: none">
+      <div class="card-block">
+        <h4 class="card-title">Affinity Water</h4>
+        <div class="rating-review-category-wrapper">
+          <div class="review-title-category full">
+            <h6><strong>4.6</strong> Overall rating
+              <span class="aright">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+              </span>
+            </h6>
+          </div>
+          <div class="criteria-wrapper-category full">
+            <div class="criteria-category first ">
+              <span class="criteria-text-category"><b>Customer Service</b></span>
+              <span class="score-text-category"><span class="service">8</span></span>
+            </div>
+            <div class="criteria-category ">
+              <span class="criteria-text-category"><b>Community Engagement</b></span>
+              <span class="community">6</span>
+            </div>
+            <div class="criteria-category first ">
+              <span class="criteria-text-category"><b>Employer Ranking</b></span>
+              <span class="employer">5</span>
+            </div>
+            <div class="criteria-category ">
+              <span class="criteria-text-category"><b>Social Impact</b></span>
+              <span class="score-text-category"><span class="social">4</span></span>
+            </div>
+          </div>
+        </div>
+        <a href="https://www.affinitywater.co.uk/index.aspx" target="_blank" class="btn btn-primary">Go to site</a>
+      </div>
+    </div>
+    <div class="card" id="sutton" style="display: none">
+      <div class="card-block">
+        <h4 class="card-title">Sutton and East Surrey Water</h4>
+        <div class="rating-review-category-wrapper">
+          <div class="review-title-category full">
+            <h6><strong>4.6</strong> Overall rating
+              <span class="aright">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+              </span>
+            </h6>
+          </div>
+          <div class="criteria-wrapper-category full">
+            <div class="criteria-category first ">
+              <span class="criteria-text-category"><b>Customer Service</b></span>
+              <span class="score-text-category"><span class="service">7</span></span>
+            </div>
+            <div class="criteria-category ">
+              <span class="criteria-text-category"><b>Community Engagement</b></span>
+              <span class="community">2</span>
+            </div>
+            <div class="criteria-category first ">
+              <span class="criteria-text-category"><b>Employer Ranking</b></span>
+              <span class="employer">1</span>
+            </div>
+            <div class="criteria-category ">
+              <span class="criteria-text-category"><b>Social Impact</b></span>
+              <span class="score-text-category"><span class="social">1</span></span>
+            </div>
+          </div>
+        </div>
+        <a href="http://www.waterplc.com/index.asp" target="_blank" class="btn btn-primary">Go to site</a>
+      </div>
+    </div>
+    <div class="card" id="essex" style="display: none">
+      <div class="card-block">
+        <h4 class="card-title">Essex&Suffolk water</h4>
+        <div class="rating-review-category-wrapper">
+          <div class="review-title-category full">
+            <h6><strong>4.6</strong> Overall rating
+              <span class="aright">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+              </span>
+            </h6>
+          </div>
+          <div class="criteria-wrapper-category full">
+            <div class="criteria-category first ">
+              <span class="criteria-text-category"><b>Customer Service</b></span>
+              <span class="score-text-category"><span class="service">6</span></span>
+            </div>
+            <div class="criteria-category ">
+              <span class="criteria-text-category"><b>Community Engagement</b></span>
+              <span class="community">1</span>
+            </div>
+            <div class="criteria-category first ">
+              <span class="criteria-text-category"><b>Employer Ranking</b></span>
+              <span class="employer">3</span>
+            </div>
+            <div class="criteria-category ">
+              <span class="criteria-text-category"><b>Social Impact</b></span>
+              <span class="score-text-category"><span class="social">2</span></span>
+            </div>
+          </div>
+        </div>
+        <a href="https://www.eswater.co.uk/" target="_blank" class="btn btn-primary">Go to site</a>
+      </div>
+    </div>
+    <div class="card" id="water" style="display: none">
+      <div class="card-block">
+        <h4 class="card-title">Water Plus</h4>
+        <div class="rating-review-category-wrapper">
+          <div class="review-title-category full">
+            <h6><strong>4.6</strong> Overall rating
+              <span class="aright">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+              </span>
+            </h6>
+          </div>
+          <div class="criteria-wrapper-category full">
+            <div class="criteria-category first ">
+              <span class="criteria-text-category"><b>Customer Service</b></span>
+              <span class="score-text-category"><span class="service">5</span></span>
+            </div>
+            <div class="criteria-category ">
+              <span class="criteria-text-category"><b>Community Engagement</b></span>
+              <span class="community">8</span>
+            </div>
+            <div class="criteria-category first ">
+              <span class="criteria-text-category"><b>Employer Ranking</b></span>
+              <span class="employer">2</span>
+            </div>
+            <div class="criteria-category ">
+              <span class="criteria-text-category"><b>Social Impact</b></span>
+              <span class="score-text-category"><span class="social">6</span></span>
+            </div>
+          </div>
+        </div>
+        <a href="https://www.water-plus.co.uk/" target="_blank" class="btn btn-primary">Go to site</a>
+      </div>
+    </div>
+    <div class="card" id="business" style="display: none">
+      <div class="card-block">
+        <h4 class="card-title">BusinessStream</h4>
+        <div class="rating-review-category-wrapper">
+          <div class="review-title-category full">
+            <h6><strong>4.6</strong> Overall rating
+              <span class="aright">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+              </span>
+            </h6>
+          </div>
+          <div class="criteria-wrapper-category full">
+            <div class="criteria-category first ">
+              <span class="criteria-text-category"><b>Customer Service</b></span>
+              <span class="score-text-category"><span class="service">2</span></span>
+            </div>
+            <div class="criteria-category ">
+              <span class="criteria-text-category"><b>Community Engagement</b></span>
+              <span class="community">7</span>
+            </div>
+            <div class="criteria-category first ">
+              <span class="criteria-text-category"><b>Employer Ranking</b></span>
+              <span class="employer">6</span>
+            </div>
+            <div class="criteria-category ">
+              <span class="criteria-text-category"><b>Social Impact</b></span>
+              <span class="score-text-category"><span class="social">7</span></span>
+            </div>
+          </div>
+        </div>
+        <a href="http://www.business-stream.co.uk/" target="_blank" class="btn btn-primary">Go to site</a>
+      </div>
+    </div>
+    <div class="card" id="waterscan" style="display: none">
+      <div class="card-block">
+        <h4 class="card-title">Waterscan</h4>
+        <div class="rating-review-category-wrapper">
+          <div class="review-title-category full">
+            <h6><strong>4.6</strong> Overall rating
+              <span class="aright">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+              </span>
+            </h6>
+          </div>
+          <div class="criteria-wrapper-category full">
+            <div class="criteria-category first ">
+              <span class="criteria-text-category"><b>Customer Service</b></span>
+              <span class="score-text-category"><span class="service">1</span></span>
+            </div>
+            <div class="criteria-category ">
+              <span class="criteria-text-category"><b>Community Engagement</b></span>
+              <span class="community">5</span>
+            </div>
+            <div class="criteria-category first ">
+              <span class="criteria-text-category"><b>Employer Ranking</b></span>
+              <span class="employer">4</span>
+            </div>
+            <div class="criteria-category ">
+              <span class="criteria-text-category"><b>Social Impact</b></span>
+              <span class="score-text-category"><span class="social">8</span></span>
+            </div>
+          </div>
+        </div>
+        <a href="http://waterscan.com/" target="_blank" class="btn btn-primary">Go to site</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

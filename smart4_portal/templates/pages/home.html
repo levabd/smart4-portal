@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% load staticfiles i18n compress%}
+
+{% block content %}
+<!--h1>Water in London</h1-->
+
+<div id="map"></div>
+
+{% compress js %}
+<script src="{% static 'data/gbr.js' %}"></script>
+<script src="{% static 'data/clusters.js' %}"></script>
+<script src="{% static 'js/md5.js' %}"></script>
+<script src="{% static 'js/map.js' %}"></script>
+<script src="{% static 'js/elizabot/elizabot.js' %}"></script>
+<script src="{% static 'js/elizabot/elizadata.js' %}"></script>
+<script src="{% static 'js/bot.js' %}"></script>
+<script src="//d3js.org/d3.v3.min.js" language="JavaScript"></script>
+<script src="{% static 'js/liquidFillGauge.js' %}"></script>
+<script src="{% static 'js/gauges.js' %}"></script>
+{% endcompress %}
+
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmX9Nnm_FVCq6kyMYFouFPIUOTAWstx0o&libraries=geometry&callback=initMap"
+  async defer></script>
+
+<div class="modal fade" id="rightsModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+          All images are used to illustrate the layout of the website with no intent for commercial use.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Agree</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="twitter">
+  <a class="twitter-timeline" href="https://twitter.com/DefraWater">Tweets by DefraWater</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+
+<div class="container text-center customer-care">
+  <div class="row">
+    <div class="round hollow text-center">
+      <a href="#" class="open-btn" id="addClass"><i class="fa fa-comments" aria-hidden="true"></i> How can we help you?</a>
+    </div>
+  </div>
+</div>
+
+<div id="sidebar_secondary" class="tabbed_sidebar chat_sidebar">
+
+  <div class="popup-head">
+
+    <div class="popup-head-left pull-left">
+      <h1>Customer care</h1>
+    </div>
+
+    <button data-widget="remove" id="removeClass" class="chat-header-button pull-right" type="button">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+
+  </div>
+
+  <div id="chat" class="chat_box_wrapper chat_box_small chat_box_active" style="opacity: 1; display: block; transform: translateX(0px);">
+    <div class="chat_box touchscroll chat_box_colors_a">
+      <div class="chat_message_wrapper">
+        <ul class="chat_message">
+          <li>
+            <p>Is something troubling you?</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="chat_submit_box">
+    <div class="uk-input-group">
+      <div class="gurdeep-chat-box">
+        <input type="text" placeholder="Type a message" id="submit_message" name="submit_message" class="md-input">
+        <a id="feedback_submit" href="#">Send &nbsp;<i class="fa fa-paper-plane-o" aria-hidden="true"></i>&nbsp;</a>
+        <span style="vertical-align: sub;" class="uk-input-group-addon"></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="dashboard-container">
+  <div class="dashboard">
+
+    <div class="row content">
+      <div class="col-lg-12">
+        <a class="button btn pull-left" id="back-to-map"><i
+          class="fa fa-chevron-left"></i> Back to map</a>
+        <div>
+          <h1 style="text-align: center;">[Borough Name]</h1>
+          <p style="text-align: center;">4.4 Overall Rating <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row content">
+      <br/><br/>
+      <div class="col-lg-2 text-center">
+        <p style="text-align: center;"><svg id="fillgauge4" class="gauge" width="100" height="100" style="text-align: center;"></svg></p>
+        <p style="text-align: center;"><b>4.1 Water Efficiency</b></p>
+      </div>
+      <div class="col-lg-2 text-center">
+        <p style="text-align: center;"><svg id="fillgauge5" class="gauge" width="100" height="100" style="text-align: center;"></svg></p>
+        <p style="text-align: center;"><b>4.3 Water Quality</b></p>
+      </div>
+      <div class="col-lg-2 text-center">
+        <p style="text-align: center;"><svg id="fillgauge2" class="gauge" width="100" height="100" style="text-align: center;"></svg></p>
+        <p style="text-align: center;"><b>4.1 Leaks</b></p>
+      </div>
+      <div class="col-lg-2 text-center">
+        <p style="text-align: center;"><svg id="fillgauge3" class="gauge" width="100" height="100" style="text-align: center;"></svg></p>
+        <p style="text-align: center;"><b>4.1 Waste Water</b></p>
+      </div>
+      <div class="col-lg-2 text-center">
+        <p style="text-align: center;"><svg id="fillgauge1" class="gauge" width="100" height="100" style="text-align: center;"></svg></p>
+        <p style="text-align: center;"><b>3.0 Carbon Emissions</b></p>
+      </div>
+      <div class="col-lg-2 text-center">
+        <p style="text-align: center;"><svg id="fillgauge6" class="gauge" width="100" height="100" style="text-align: center;"></svg></p>
+        <p style="text-align: center;"><b>3.9 Resiliency</b></p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock content %}

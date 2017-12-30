@@ -1,0 +1,217 @@
+{% load staticfiles i18n compress%}<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Product">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}Smart 4 Portal{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Digitising Water &amp; Customer Experiences">
+    <meta name="author" content="Smart4 tech">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Smart 4 Portal">
+    <meta itemprop="description" content="Digitising Water &amp; Customer Experiences">
+    <meta itemprop="image" content="http://smart4.tech/img/square-logo.png">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="smart4">
+    <meta name="twitter:site" content="@Smart4_tech">
+    <meta name="twitter:title" content="Smart 4 Portal">
+    <meta name="twitter:description" content="Digitising Water &amp; Customer Experiences">
+    <meta name="twitter:creator" content="@Smart4_tech">
+    <meta name="twitter:image:src" content="http://smart4.tech/img/square-logo.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Smart 4 Portal" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://portal.smart4.tech/" />
+    <meta property="og:image" content="http://smart4.tech/img/square-logo.png" />
+    <meta property="og:description" content="Digitising Water &amp; Customer Experiences" />
+    <meta property="og:site_name" content="Smart4 portal" />
+    <meta property="fb:admins" content="1224447267612786" />
+
+    <link rel="icon" href="{% static 'images/favicon.ico' %}"
+          type="image/x-icon"/>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon"/>
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela+Round:400&amp;amp;subset=latin">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+
+    {% block css %}
+    <!-- Latest compiled and minified Bootstrap 4 Alpha 4 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+
+    {% compress css %}
+
+    <link href="{% static 'css/project.css' %}" rel="stylesheet">
+    {% endcompress %}
+    {% endblock %}
+    <script src="https://use.fontawesome.com/dde3f58fc4.js"></script>
+  </head>
+
+  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.3/webfont.js" type="text/javascript" async=""></script>
+    <div class="m-b-0">
+      <nav class="navbar navbar-dark navbar-static-top bg-inverse">
+        <div class="container">
+          <a class="navbar-brand" href="/"><img class="logo-nav" alt="logo" src="{% static 'images/logo-head.png' %}"></a>
+          <button type="button" class="navbar-toggler hidden-sm-up pull-xs-right" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
+            &#9776;
+          </button>
+
+          {% if request.user.is_authenticated %}
+          <div class="collapse navbar-toggleable-xs" id="bs-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="nav-item{% if request.resolver_match.url_name == 'home' %} active{% endif %}">
+                <a
+                  class="nav-link"
+                  href="{% url 'home' %}">Community</a>
+              </li>
+
+              <li class="nav-item{% if request.resolver_match.url_name == 'hub' %} active{% endif %}">
+                <a
+                  class="nav-link"
+                  href="{% url 'hub' %}">Water Hub</a>
+              </li>
+
+              <li class="nav-item{% if request.resolver_match.url_name == 'comunity' %} active{% endif %}">
+                <a
+                  class="nav-link"
+                  href="{% url 'comunity' %}">Water companies</a>
+              </li>
+
+              <li class="nav-item{% if request.resolver_match.url_name == 'business' %} active{% endif %}">
+                <a
+                  class="nav-link"
+                  href="{% url 'business' %}">Business</a>
+              </li>
+
+              <li class="nav-item{% if request.resolver_match.url_name == 'stat' %} active{% endif %}">
+                <a
+                  class="nav-link"
+                  href="{% url 'stat' %}">Water map</a>
+              </li>
+            </ul>
+            {% endif %}
+
+
+            <ul class="nav navbar-nav pull-xs-right">
+
+              {% load inlist %}
+
+              {% if request.user.is_authenticated %}
+                <li class="nav-item{% if request.resolver_match.url_name|InList:'detail,update' %} active{% endif %}">
+                  <a
+                    class="nav-link"
+                     href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
+                </li>
+                <li class="nav-item{% if request.resolver_match.url_name == 'account_logout' %} active{% endif %}" href="{% url 'account_logout' %}">
+                  <a href="{% url 'account_logout' %}"
+                     class="nav-link">{% trans "Sign Out" %}</a>
+                </li>
+              {% else %}
+                <li class="nav-item{% if request.resolver_match.url_name == 'account_login' %} active{% endif %}">
+                  <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="container{% if request.resolver_match.url_name|InList:'home,stat' %}-fluid{% endif %}">
+      <div class="row">
+        <div
+          class="main-content{% if request.resolver_match.url_name|InList:'home,stat' %}-map{% endif %}">
+              {% if request.user.is_authenticated or request.resolver_match.url_name|InList:'account_login,account_signup,account_reset_password,account_reset_password_done,account_reset_password_from_key,account_reset_password_from_key_done' %}
+              {% if request.resolver_match.url_name != 'home' and messages %}
+                  {% for message in messages %}
+                      <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
+                  {% endfor %}
+              {% endif %}
+
+              {% block content %}
+                  <p>This is not the page you were looking for.</p>
+              {% endblock content %}
+            {% else %}
+              <div class="row">
+                <div class="col-md-6 offset-md-3">
+
+                  <h1>Public access denied</h1>
+
+                  <p>We are sorry, but public access is currently denied.</p>
+                  <p>Try to </p>
+                  <a class="btn btn-primary" href="{% url 'account_login' %}" role="button">{% trans "Sign In" %}</a>
+
+                </div>
+              </div>
+            {% endif %}
+        </div>
+      </div>
+    </div> <!-- /container -->
+
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <a target="_blank" href="http://smart4.tech/">About</a>&nbsp;&nbsp;
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'partners' %}">Partners</a>
+                {% endif %}
+            </div>
+            <div class="col-md-4">
+              <small>© <script>document.write(new Date().getFullYear())</script> Smart 4.0 All rights reserved.</small>
+            </div>
+            {% if request.user.is_authenticated %}
+            <div class="col-md-3">
+              <div class="download-from">
+                  <a class="download-link" target="_blank" href="#">
+                      <img class="hover" src="{% static 'images/app-store-hover.png' %}" alt="">
+                      <img class="normal" src="{% static 'images/app-store.png' %}" alt="">
+                  </a>
+                  <a class="download-link" target="_blank" href="https://play.google.com/store/apps/details?id=com.wipon.wipon">
+                      <img class="hover" src="{% static 'images/google-play-hover.png' %}" alt="">
+                      <img class="normal" src="{% static 'images/google-play.png' %}" alt="">
+                  </a>
+              </div>
+            </div>
+            <div class="col-md-2">
+                <!--social-->
+                <ul class="social">
+                    <li><a href="https://twitter.com/intent/tweet?text=Londoners%2C%20what%27s%20your%20Water%20meter%20portal%3F&url=http%3A%2F%2Fportal.smart4.tech" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fportal.smart4.tech" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://plus.google.com/share?url=http%3A%2F%2Fportal.smart4.tech" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                </ul>
+
+                <!--social end-->
+
+            </div>
+            {% endif %}
+        </div>
+      </div>
+    </footer>
+
+    {% block modal %}{% endblock modal %}
+
+    <!-- Le javascript
+    ================================================== -->
+    {% block javascript %}
+      <!-- Required by Bootstrap v4 Alpha 4 -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+
+      {% compress js %}
+      <script src="{% static 'js/project.js' %}"></script>
+      {% endcompress %}
+
+    {% endblock javascript %}
+  </body>
+</html>
+

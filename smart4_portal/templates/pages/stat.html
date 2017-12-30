@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load staticfiles i18n compress%}
+
+{% block content %}
+
+{% compress js %}
+<script src="{% static 'data/clusters.js' %}"></script>
+<script src="{% static 'js/stats.js' %}"></script>
+{% endcompress %}
+
+<div class="modal fade" id="reportSuccessModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Report successfully saved</h4>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-success" role="alert">
+          <strong>Well done!</strong> You successfully send leak report.
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="reportModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Send a report</h4>
+      </div>
+      <div class="modal-body">
+          <div class="form-group">
+            <label for="inputName">Name</label>
+            <input type="tel" class="form-control" id="inputName" placeholder="Enter name">
+          </div>
+          <div class="form-group">
+            <label for="inputPhone">Phone number</label>
+            <input type="tel" class="form-control" id="inputPhone" placeholder="Enter phone number">
+            <small id="telHelp" class="form-text text-muted">We'll never share your tel with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="addressTextarea">Leak address</label>
+            <textarea class="form-control" id="addressTextarea" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" data-toggle="modal" id="leak-submit" data-target="#reportSuccessModal"  data-dismiss="modal">Submit</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="leaks-legend">
+  <div><span class="circle-green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> — Water updates</div>
+  <div><span class="circle-red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> — Water leaks</div>
+</div>
+
+<button type="button" class="report-btn btn btn-warning" data-toggle="modal" data-target="#reportModal">Report a leak</button>
+
+<div id="map"></div>
+
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmX9Nnm_FVCq6kyMYFouFPIUOTAWstx0o&libraries=geometry&callback=initMap"
+  async defer></script>
+
+{% endblock content %}

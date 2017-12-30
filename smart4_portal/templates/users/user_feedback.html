@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static staticfiles i18n compress %}
+
+{% block title %}Customer care{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-8">
+
+      <h2>{{ user }} tell us about your trouble</h2>
+
+      <form class="form-horizontal" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <div class="control-group">
+          <div class="controls">
+            <button type="submit" class="btn">Ask</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</div>
+
+{% endblock content %}
+

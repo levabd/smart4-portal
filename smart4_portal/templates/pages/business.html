@@ -1,0 +1,2049 @@
+{% extends "base.html" %}
+{% load staticfiles i18n compress%}
+
+{% block content %}
+
+<h1>Companies Ranking</h1>
+
+{% compress js %}
+<script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'js/business.js' %}"></script>
+{% endcompress %}
+
+<nav class="navbar company-filters">
+  <h4>Select Industry</h4>
+  <div class="container">
+    <div class="collapse navbar-toggleable-xs" id="bs-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+        <li class="nav-item active">
+          <a class="nav-link" href="#" data-filter="*">All</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-filter=".food">Food Manufacturing</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-filter=".hospitality">Hospitality</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-filter=".finance">Finance & Consulting</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-filter=".energy">Energy & Telecoms</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<nav class="navbar company-filters">
+  <div class="container">
+    <div class="collapse navbar-toggleable-xs" id="bs-navbar-collapse-2">
+
+      <ul class="nav navbar-nav">
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-filter=".property">Property Developers</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-filter=".shopping">Shopping Centres</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-filter=".public">Public Spaces</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-filter=".entertainment">Entertainment</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-filter=".office">Office Buildings</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<nav class="navbar company-filters">
+  <h4>Sort by</h4>
+  <div class="container">
+    <div class="collapse navbar-toggleable-xs" id="bs-navbar-collapse-3">
+      <ul class="nav navbar-nav">
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-sort-value="efficiency">Water Efficiency</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-sort-value="community">Community Engagement</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-sort-value="employer">Employer Rating</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-sort-value="social">Social Impact</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="reviews-category grid">
+    <div class="element-item food post-block-content" data-category="food">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/brand.gif' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>Diageo</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          Diageo
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">4</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">4</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">5</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">4</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="element-item food post-block-content" data-category="food">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/associated-british-foods_416x416.jpg' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>Associated British Foods</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          Associated British Foods
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">2</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">5</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">2</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">3</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="element-item food post-block-content" data-category="food">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/UBlogo-01.png' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>United Biscuits</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          United Biscuits
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">3</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">3</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">4</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">5</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="element-item food post-block-content" data-category="food">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/Tilda_Legend_Logo copy.png' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>Tilda</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          Tilda
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">5</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">2</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">3</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">2</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="element-item hospitality post-block-content" data-category="hospitality">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/hilton.jpg' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>Hilton</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          Hilton
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">2</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">5</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">4</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">2</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="element-item hospitality post-block-content" data-category="hospitality">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/Hotel_Intercontinental.png' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>InterContinental</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          InterContinental
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">3</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">2</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">5</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">5</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="element-item hospitality post-block-content" data-category="hospitality">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/marriott-international_416x416.jpg' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>Marriott</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          Marriott
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">4</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">3</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">3</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">4</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="element-item hospitality post-block-content" data-category="hospitality">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/accor-hotels-uses-google-ad-extensions-to-increase-incremental-conversions_case-studies_lg.png' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>Accorr</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          Accorr
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">5</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">4</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">2</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">3</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="element-item finance post-block-content" data-category="finance">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/Goldman_Sachs.svg.png' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>Goldman Sachs</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          Goldman Sachs
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">2</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">2</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">5</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">3</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="element-item finance post-block-content" data-category="finance">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/220px-EY_logo13.png' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>EY</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          EY
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">3</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">5</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">3</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">5</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="element-item finance post-block-content" data-category="finance">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/XJcVIoY-_400x400.png' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>PwC</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          PwC
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">5</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">3</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">4</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">4</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="element-item finance post-block-content" data-category="finance">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/hsbc1.jpg' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>HSBC</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          HSBC
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">4</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">4</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">3</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">2</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="element-item energy post-block-content" data-category="energy">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/British-Gas-logo.png' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>British Gas</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          British Gas
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">3</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">5</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">4</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">4</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="element-item energy post-block-content" data-category="energy">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/t2Vmr5wP_400x400.png' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>EDF</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          EDF
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">4</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">3</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">5</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">3</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="element-item energy post-block-content" data-category="energy">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/bt-2.600px.png' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>BT</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          BT
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">5</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">4</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">3</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">5</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="element-item property post-block-content" data-category="property">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/cwg-new-logo.jpg' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>Canary Wharf Group</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          Canary Wharf Group
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">6</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">3</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">6</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">4</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="element-item property post-block-content" data-category="property">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/gn_1.7.1_barratt_devs_barratt_homes_562x331.jpg' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>Barratt Homes</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          Barratt Homes
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">2</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">2</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">3</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">2</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="element-item property post-block-content" data-category="property">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/1767939_Berkeley-Logo-Square.jpg' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>Berkeley</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          Berkeley
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">3</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">1</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">4</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">3</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="element-item property post-block-content" data-category="property">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/Land-Sec-Logo.jpg' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>Land Securities</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          Land Securities
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">5</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">6</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">5</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">5</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="element-item property post-block-content" data-category="property">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/2000px-Capital___Counties_Properties.svg.png' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>Capital and Counties</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          Capital and Counties
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">1</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">4</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">1</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">6</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="element-item property post-block-content" data-category="property">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/ballymore-logo.gif' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>Oxley & Ballymore</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          Oxley & Ballymore
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">4</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">5</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">2</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">1</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="element-item shopping post-block-content" data-category="shopping">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/brand-2.gif' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>Westfield</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          Westfield
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">1</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">2</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">1</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">2</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="element-item shopping post-block-content" data-category="shopping">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/selfridges_2015.png' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>Selfridges</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          Selfridges
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">2</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">1</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">2</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">1</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="element-item public post-block-content" data-category="public">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/b30cf313969635.5627b046e9ba4.jpg' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>London Zoo</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          London Zoo
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">1</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">2</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">1</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">2</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="element-item public post-block-content" data-category="public">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/brand-3.gif' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>Royal Parks</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          Royal Parks
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">2</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">1</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">2</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">1</span></span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="element-item entertainment post-block-content" data-category="entertainment">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/j1HNGxi9end2GREuYM2XmQ-The_O2_Colour_Positive_RGB.jpg' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>O2 Centre</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          O2 Centre
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">1</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">3</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">1</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">4</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="element-item entertainment post-block-content" data-category="entertainment">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/Emirates_Stadium_logo.svg.png' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>Emirates Stadium</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          Emirates Stadium
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">3</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">2</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">5</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">3</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="element-item entertainment post-block-content" data-category="entertainment">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/ExCel-logo-4XK6Y4.png' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>ExCel</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          ExCel
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">4</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">1</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">4</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">2</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="element-item entertainment post-block-content" data-category="entertainment">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/Wembley-logo-880x660 copy.png' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>Wembley Stadium</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          Wembley Stadium
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">2</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">5</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">2</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">1</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="element-item entertainment post-block-content" data-category="entertainment">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/photo.jpg' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>Queen Elizabeth Olympic Park</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          Queen Elizabeth Olympic Park
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">5</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">4</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">3</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">5</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="element-item social post-block-content" data-category="social">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/14102394_1277026835694816_6862654421863970219_n.jpg' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>The Shard</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          The Shard
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">4</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">6</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">5</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">1</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="element-item social post-block-content" data-category="social">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/logo_leadenhall-228x135-2.png' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>Ladenhall Building</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          Ladenhall Building
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">1</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">5</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">1</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">2</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="element-item social post-block-content" data-category="social">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/d14f71f11ecf21cb1f4715eb2f2038be_400x400.jpeg' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>One Canada Square</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          One Canada Square
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">2</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">4</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">3</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">3</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="element-item social post-block-content" data-category="social">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/heron-tower-overview.jpg' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>Heron Tower</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          Heron Tower
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">3</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">3</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">4</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">4</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="element-item social post-block-content" data-category="social">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/tower42 logo.gif' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>Tower 42</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          Tower 42
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">5</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">2</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">6</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">5</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="element-item social post-block-content" data-category="social">
+    <div class="full first" style="margin-bottom: 0;">
+      <div class="post-block-featured-image">
+        <img src="{% static 'images/logos/10570_25_stmarylogo.gif' %}" alt="">
+        <div class="post-block-featured-image-shadow"></div>
+      </div>
+    </div>
+    <div class="post-block-title">
+      <div class="overview_stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h2>30 St Mary Axe</h2>
+    </div>
+    <div class="full review_rating_category_view">
+      <div class="full">
+          30 St Mary Axe
+      </div>
+      <div class="rating-review-category-wrapper">
+        <div class="review-title-category full">
+          <h6><strong>4.6</strong> Overall rating
+            <span class="aright">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </span>
+          </h6>
+        </div>
+        <div class="criteria-wrapper-category full">
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Water Efficiency</b></span>
+            <span class="score-text-category"><span class="efficiency">6</span></span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Community Engagement</b></span>
+            <span class="community">1</span>
+          </div>
+          <div class="criteria-category first ">
+            <span class="criteria-text-category"><b>Employer Ranking</b></span>
+            <span class="employer">2</span>
+          </div>
+          <div class="criteria-category ">
+            <span class="criteria-text-category"><b>Social Impact</b></span>
+            <span class="score-text-category"><span class="social">6</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

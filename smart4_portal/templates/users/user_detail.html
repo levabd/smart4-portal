@@ -1,0 +1,204 @@
+{% extends "base.html" %}
+{% load static staticfiles i18n compress %}
+
+{% block title %}User: {{ object.username }}{% endblock %}
+
+{% block content %}
+
+{% compress js %}
+<script src="{% static 'js/profile.js' %}"></script>
+<script src="//d3js.org/d3.v3.min.js" language="JavaScript"></script>
+<script src="{% static 'js/jquery.card.js' %}"></script>
+{% endcompress %}
+
+<div class="modal fade" id="paymentModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Payment not connected</h4>
+      </div>
+      <div class="modal-body">
+        <p>We're sorry. Payment not connected yet.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<div class="modal fade" id="cardModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Enter your card information</h4>
+      </div>
+      <div class="modal-body">
+        <div class="card-wrapper"></div>
+
+        <div class="form-container">
+          <form action="" class="form-horizontal">
+            <p class="small">Start typing in here to take over</p>
+            <div class="row">
+              <div class="col-sm-6">
+                <input class="textinput textInput form-control" placeholder="Card number" type="text" name="number" id="cardnumber">
+              </div>
+              <div class="col-sm-6">
+                <input class="textinput textInput form-control" placeholder="Full name" type="text" name="name" id="cardname">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <input class="textinput textInput form-control" placeholder="MM/YY" type="text" name="expiry" id="cardexpiry">
+              </div>
+
+              <div class="col-sm-3">
+                <input class="textinput textInput form-control" placeholder="CVC" type="text" name="cvc" id="cardcvc">
+              </div>
+
+              <div class="col-sm-6 controls">
+                <input class="btn btn-primary form-control" type="submit" value="Submit" class="button postfix">
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <script>
+        $('.form-container form').card({
+          // a selector or DOM element for the container
+          // where you want the card to appear
+          container: '.card-wrapper', // *required*
+
+          // all of the other options from above
+        });
+      </script>
+
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-3">
+
+
+      {% if object.name %}
+        <h2>{{ object.name }}</h2>
+      {% endif %}
+      <p>{{ object.username }}</p>
+    </div>
+
+    {% if object == request.user %}
+    <div class="col-sm-9">
+      <a class="btn btn-primary" href="{% url 'users:update' %}" role="button">My Info</a>
+      <a class="btn btn-primary" href="{% url 'account_email' %}" role="button">E-Mail</a>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cardModal">Connect your card&nbsp;<i class="fa fa-credit-card" aria-hidden="true"></i></button>
+      <!-- Your Stuff: Custom user template urls -->
+    </div>
+    {% endif %}
+
+  </div>
+
+<div class="row">
+
+    <div class="col-sm-3">
+        <div class="user-week-usage">
+          <h3>Water credits counter</h3>
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle-thin fa-stack-2x"></i>
+            <i class="fa fa-tint fa-stack-1x"></i>
+          </span>
+          <h2>827 litres</h2>
+          <p>(whitch equates to £12.0)*</p>
+          <p style="margin-top: 5px; font-size: 8px;">*Your current rate</p>
+        </div>
+    </div>
+
+    <div class="col-sm-3">
+        <div class="user-rating">
+          <h3>Your rating</h3>
+          <div class="user_stars">
+            <i class="fa fa-star-half-o"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+          <h2>Above average</h2>
+          <p>water usage</p>
+        </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="water-credits">
+        <h4>Water usage</h4>
+        <div class="meter-container">
+            <div class="meter"></div>
+            <div class="meter-bg">
+                <span data-in="0">0 1 2 3 4 5 6 7 8 9 0</span>
+                <span data-in="0">0 1 2 3 4 5 6 7 8 9 0</span>
+                <span data-in="0">0 1 2 3 4 5 6 7 8 9 0</span>
+                <span data-in="0">0 1 2 3 4 5 6 7 8 9 0</span>
+                <span data-in="0">0 1 2 3 4 5 6 7 8 9 0</span>
+                <span data-in="0">0 1 2 3 4 5 6 7 8 9 0</span>
+            </div>
+            <img src="{% static 'images/dial.png' %}" alt="" data-di-width="20" data-di-height="20">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+        <div class="user-bill">
+          <h3>Your monthly bill</h3>
+          <p>Last month: £1200</p>
+          <h2>Current: £200</h2>
+          <div class="pay-button-group">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cardModal">Connect your card&nbsp;<i class="fa fa-credit-card" aria-hidden="true"></i></button>
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#paymentModal">
+              Pay online
+            </button>
+          </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-sm-12">
+    <h2>Usage history</h2>
+    <hr />
+
+    <div id="lineChart">
+        <svg id="lineChartSVG" class="lineChart--svg">
+          <defs>
+            <linearGradient id="lineChart--gradientBackgroundArea" x1="0" x2="0" y1="0" y2="1">
+              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+            </linearGradient>
+          </defs>
+        </svg>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-sm-12">
+    <h2>Your trends</h2>
+    <hr />
+    <div id="chart"></div>
+  </div>
+
+</div>
+
+</div>
+{% endblock content %}
+

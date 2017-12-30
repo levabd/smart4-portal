@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags static staticfiles i18n compress %}
+
+{% block title %}{{ user.username }}{% endblock %}
+
+{% block content %}
+
+{% compress js %}
+<script src="{% static 'js/jquery.card.js' %}"></script>
+{% endcompress %}
+
+{% if object.name %}
+<h1>{{ object.name }}</h1>
+{% else %}
+<h1>{{ user.username }}</h1>
+{% endif %}
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-6">
+
+      <h4>Enter your user data</h4>
+
+      <form class="form-horizontal" method="post" action="{% url 'users:update' %}">
+        {% csrf_token %}
+        {{ form|crispy }}
+
+        <div class="control-group">
+          <div class="controls">
+            <button type="submit" class="btn">Update</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+    <div class="col-sm-6">
+
+      <div class="card-container">
+
+        <h4>Enter your card information</h4>
+
+        <div class="card-wrapper"></div>
+
+        <div class="form-container">
+          <form action="" class="form-horizontal">
+            <p class="small">Start typing in here to take over</p>
+            <div class="row">
+              <div class="col-sm-6">
+                <input class="textinput textInput form-control" placeholder="Card number" type="text" name="number" id="cardnumber">
+              </div>
+              <div class="col-sm-6">
+                <input class="textinput textInput form-control" placeholder="Full name" type="text" name="name" id="cardname">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <input class="textinput textInput form-control" placeholder="MM/YY" type="text" name="expiry" id="cardexpiry">
+              </div>
+
+              <div class="col-sm-3">
+                <input class="textinput textInput form-control" placeholder="CVC" type="text" name="cvc" id="cardcvc">
+              </div>
+
+              <div class="col-sm-6 controls">
+                <input class="btn btn-primary form-control" type="submit" value="Submit" class="button postfix">
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+      <script>
+        $('.form-container form').card({
+          // a selector or DOM element for the container
+          // where you want the card to appear
+          container: '.card-wrapper', // *required*
+
+          // all of the other options from above
+        });
+      </script>
+
+    </div>
+  </div>
+</div>
+
+    {% endblock %}
