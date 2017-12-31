@@ -65,7 +65,7 @@ X_FRAME_OPTIONS = 'DENY'
 # ------------------------------------------------------------------------------
 # Hosts/domain names that are valid for this site
 # See https://docs.djangoproject.com/en/1.6/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['portal.smart4.tech']
+ALLOWED_HOSTS = ['portal.smart4.tech', 'www.portal.smart4.tech', 'levabd.pythonanywhere.com']
 # END SITE CONFIGURATION
 
 INSTALLED_APPS += ('gunicorn', )

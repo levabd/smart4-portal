@@ -14,7 +14,8 @@ import environ
 
 ROOT_DIR = environ.Path(__file__) - 3  # (smart4_portal/config/settings/common.py - 3 = smart4_portal/)
 APPS_DIR = ROOT_DIR.path('smart4_portal')
-ALLOWED_HOSTS = ['portal.smart4.tech']
+ALLOWED_HOSTS = ['portal.smart4.tech',
+                 'www.portal.smart4.tech', 'levabd.pythonanywhere.com']
 
 env = environ.Env()
 env.read_env()

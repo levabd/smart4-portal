@@ -23,8 +23,10 @@ TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key only used for development and testing.
-SECRET_KEY = env('DJANGO_SECRET_KEY', default='csql40_w%z73773!vtxa1lg=9%h@jd-_2qojwreisxw7eomk&6')
-ALLOWED_HOSTS = ['portal.smart4.tech']
+SECRET_KEY = env('DJANGO_SECRET_KEY',
+                 default='csql40_w%z73773!vtxa1lg=9%h@jd-_2qojwreisxw7eomk&6')
+ALLOWED_HOSTS = ['portal.smart4.tech',
+                 'www.portal.smart4.tech', 'levabd.pythonanywhere.com']
 
 # Mail settings
 # ------------------------------------------------------------------------------
@@ -33,12 +35,11 @@ EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_PASSWORD = env('DJANGO_EMAIL_HOST_PASSWORD',
-                          default='psw') #my gmail password
+                          default='psw')  # my gmail password
 EMAIL_HOST_USER = env('DJANGO_EMAIL_HOST_USER',
-                          default='user@gmail.com') #my gmail username
+                      default='user@gmail.com')  # my gmail username
 EMAIL_PORT = 587
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-
 
 
 # CACHING
