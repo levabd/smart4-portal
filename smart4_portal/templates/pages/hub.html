@@ -1,172 +1,171 @@
-{% extends "base.html" %}
-{% load staticfiles i18n compress%}
-
-{% block content %}
+{% extends "base.html" %} {% load staticfiles i18n compress%} {% block content %}
 
 <div class="row hub-header">
-  <div class="col-sm-4">
-    <img src="{% static 'images/gwp-en.png' %}"> <br/>
-  </div>
-  <div class="col-sm-6"></div>
-  <div class="col-sm-2">
-    <a class="btn btn-primary" href="#" role="button">Subscribe</a> <br/>
-    <a href="#">
-      <img src="{% static 'images/imgpsh_fullsize.jpg' %}"/><br/>
-      <!--span class="fa-stack fa-lg">
+    <div class="col-sm-4">
+        <img src="/static/images/gwp-en.png"> <br/>
+    </div>
+    <div class="col-sm-6"></div>
+    <div class="col-sm-2">
+        <a class="btn btn-primary" href="#" role="button">Subscribe</a> <br/>
+        <a href="#">
+            <img src="/static/images/imgpsh_fullsize.jpg" /><br/>
+            <!--span class="fa-stack fa-lg">
         <i class="fa fa-circle fa-stack-2x"></i>
         <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
       </span-->
-    </a>
-  </div>
+        </a>
+    </div>
 </div>
 
 <div class="row">
-  <div class="col-sm-12">
-    <b>GLOBAL GOALS. LOCAL IMPACT JOIN OUR COMMUNITY OF CITIZENS AND MAKE THE DIFFERENCE LOCALLY</b>
-  </div>
+    <div class="col-sm-12">
+        <b>GLOBAL GOALS. LOCAL IMPACT JOIN OUR COMMUNITY OF CITIZENS AND MAKE THE DIFFERENCE LOCALLY</b>
+    </div>
 </div>
 
 <div class="row hub-properties">
-  <div class="col-sm-2" style="text-align: center">
-    <img src="{% static 'images/hub1.png' %}"/><br/>
-    <b>News</b>
-  </div>
-  <div class="col-sm-2" style="text-align: center">
-    <img src="{% static 'images/hub2.png' %}"/><br/>
-    <b>Learn</b>
-  </div>
-  <div class="col-sm-2" style="text-align: center">
-    <img src="{% static 'images/hub3.png' %}"/><br/>
-    <b>Innovation</b>
-  </div>
-  <div class="col-sm-2" style="text-align: center">
-    <img class="participate" src="{% static 'images/hub4.png' %}"/><br/>
-    <b>Participate</b>
-  </div>
-  <div class="col-sm-2" style="text-align: center">
-    <img src="{% static 'images/hub5.png' %}"/><br/>
-    <b>Play</b>
-  </div>
-  <div class="col-sm-2" style="text-align: center">
-    <img src="{% static 'images/hub6.png' %}"/><br/>
-    <b>Donate</b>
-  </div>
+    <div class="col-sm-2" style="text-align: center">
+        <img src="/static/images/hub1.png" /><br/>
+        <b>News</b>
+    </div>
+    <div class="col-sm-2" style="text-align: center">
+        <img src="/static/images/hub2.png" /><br/>
+        <b>Learn</b>
+    </div>
+    <div class="col-sm-2" style="text-align: center">
+        <img src="/static/images/hub3.png" /><br/>
+        <b>Innovation</b>
+    </div>
+    <div class="col-sm-2" style="text-align: center">
+        <img class="participate" src="/static/images/hub4.png" /><br/>
+        <b>Participate</b>
+    </div>
+    <div class="col-sm-2" style="text-align: center">
+        <img src="/static/images/hub5.png" /><br/>
+        <b>Play</b>
+    </div>
+    <div class="col-sm-2" style="text-align: center">
+        <img src="/static/images/hub6.png" /><br/>
+        <b>Donate</b>
+    </div>
 </div>
 
 <div class="row hub-tables">
-  <div class="col-sm-6">
-    <img src="{% static 'images/2015-global-risk-no-1-water-crises.jpg' %}"/>
-  </div>
-  <div class="col-sm-4">
-    <img class="boy" src="{% static 'images/boy.png' %}"/>
-  </div>
-  <div class="col-sm-2">
-    <h4 style="text-align: center">VIDEOS</h4>
-    <div class="row">
-      <iframe width="250" height="140" src="https://www.youtube.com/embed/D-wxnID2q4A" frameborder="0" allowfullscreen></iframe>
+    <div class="col-sm-6">
+        <img src="/static/images/2015-global-risk-no-1-water-crises.jpg" />
     </div>
-    <div class="row">
-      <iframe width="250" height="140" src="https://www.youtube.com/embed/fwV9OYeGN88" frameborder="0" allowfullscreen></iframe>
+    <div class="col-sm-4">
+        <img class="boy" src="/static/images/boy.png" />
     </div>
-  </div>
+    <div class="col-sm-2">
+        <h4 style="text-align: center">VIDEOS</h4>
+        <div class="row">
+            <iframe width="250" height="140" src="https://www.youtube.com/embed/D-wxnID2q4A" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="row">
+            <iframe width="250" height="140" src="https://www.youtube.com/embed/fwV9OYeGN88" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
 </div>
 
 <div class="row hub-conversation">
-  <div class="col-sm-9">
-    <h4 style="text-align: center; margin-top: 20px; padding-bottom: 10px; padding-top: 10px; background-color: #94d2f1;">Be part of the
-      conversation</h4>
-    <div class="row">
-      <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
-        <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:100%">
-          <tbody>
-          <tr>
-            <td class="rtecenter"><img alt="" class="img-rounded" src="{% static 'images/tap-120x120_0.gif' %}" style="height:120px; width:120px">
-            </td>
-          </tr>
-          <tr>
-            <td class="rtecenter">
-              <p><span style="font-family:arial">More people die from poor quality water annually than from all forms of violence, including war.</span></p>
-            </td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
-        <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:100%">
-          <tbody>
-          <tr>
-            <td class="rtecenter"><img alt="" class="img-rounded" src="{% static 'images/fish-120x120_0.gif' %}" style="height:120px; width:120px">​
-            </td>
-          </tr>
-          <tr>
-            <td class="rtecenter">
-              <p class="rtecenter"><span style="font-family:arial">As water quality declines, more than 50% of freshwater fish species are at risk of extinction.</span>
-              </p></td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
-        <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:100%">
-          <tbody>
-          <tr>
-            <td class="rtecenter">​<img alt="" class="img-rounded" src="{% static 'images/tractor-120x120_0.gif' %}"
-                                        style="height:120px; width:120px"></td>
-          </tr>
-          <tr>
-            <td class="rtecenter">
-              <p class="rtecenter"><span
-                style="font-family:arial">Food and agriculture are the largest consumers of water, requiring one hundred times more than we use for personal needs.</span>
-              </p></td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
-        <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:100%">
-          <tbody>
-          <tr>
-            <td class="rtecenter"><img alt="" class="img-rounded" src="{% static 'images/heard3.gif' %}" style="height:120px; width:120px">​​</td>
-          </tr>
-          <tr>
-            <td class="rtecenter">
-              <p class="rtecenter"><span style="font-family:arial">Water is in heart of physical, mental & emotional health.</span>
-              </p></td>
-          </tr>
-          </tbody>
-        </table>
-        <h4></h4></div>
+    <div class="col-sm-9">
+        <h4 style="text-align: center; margin-top: 20px; padding-bottom: 10px; padding-top: 10px; background-color: #94d2f1;">Be part of the conversation
+        </h4>
+        <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
+                <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:100%">
+                    <tbody>
+                        <tr>
+                            <td class="rtecenter"><img alt="" class="img-rounded" src="/static/images/tap-120x120_0.gif" style="height:120px; width:120px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="rtecenter">
+                                <p><span style="font-family:arial">More people die from poor quality water annually than from all forms of violence, including war.</span></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
+                <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:100%">
+                    <tbody>
+                        <tr>
+                            <td class="rtecenter"><img alt="" class="img-rounded" src="/static/images/fish-120x120_0.gif" style="height:120px; width:120px">​
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="rtecenter">
+                                <p class="rtecenter"><span style="font-family:arial">As water quality declines, more than 50% of freshwater fish species are at risk of extinction.</span>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
+                <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:100%">
+                    <tbody>
+                        <tr>
+                            <td class="rtecenter">​<img alt="" class="img-rounded" src="/static/images/tractor-120x120_0.gif" style="height:120px; width:120px"></td>
+                        </tr>
+                        <tr>
+                            <td class="rtecenter">
+                                <p class="rtecenter"><span style="font-family:arial">Food and agriculture are the largest consumers of water, requiring one hundred times more than we use for personal needs.</span>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
+                <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:100%">
+                    <tbody>
+                        <tr>
+                            <td class="rtecenter"><img alt="" class="img-rounded" src="/static/images/heard3.gif" style="height:120px; width:120px">​​</td>
+                        </tr>
+                        <tr>
+                            <td class="rtecenter">
+                                <p class="rtecenter"><span style="font-family:arial">Water is in heart of physical, mental & emotional health.</span>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4></h4>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="col-sm-3">
-    <img src="{% static 'images/d4079a734a7c9c6fbdcb4813638f8624.png' %}"/>
-  </div>
+    <div class="col-sm-3">
+        <img src="/static/images/d4079a734a7c9c6fbdcb4813638f8624.png" />
+    </div>
 </div>
 
 <h4 style="text-align: center; margin-top: 20px;">NEWS & STORIES</h4>
 
 <div class="row hub-news1">
-  <div class="col-sm-4">
-    <img src="{% static 'images/14977506132_eb5667a00b_b.jpg' %}"/>
-  </div>
-  <div class="col-sm-4">
-    <img src="{% static 'images/dogs-yellow-labrador-retriever-animal-golden-160740.jpeg' %}"/>
-  </div>
-  <div class="col-sm-4">
-    <img src="{% static 'images/sport-swimmer-swim-crawl-163306-large.jpeg' %}"/>
-  </div>
+    <div class="col-sm-4">
+        <img src="/static/images/14977506132_eb5667a00b_b.jpg" />
+    </div>
+    <div class="col-sm-4">
+        <img src="/static/images/dogs-yellow-labrador-retriever-animal-golden-160740.jpeg" />
+    </div>
+    <div class="col-sm-4">
+        <img src="/static/images/sport-swimmer-swim-crawl-163306-large.jpeg" />
+    </div>
 </div>
 
 <div class="row hub-news2">
-  <div class="col-sm-4">
-    <img src="{% static 'images/pexels-photo-69896-large.jpeg' %}"/>
-  </div>
-  <div class="col-sm-4">
-    <img src="{% static 'images/pexels-photo-188934.jpeg' %}"/>
-  </div>
-  <div class="col-sm-4">
-    <img src="{% static 'images/pexels-photo-172262-large.jpeg' %}"/>
-  </div>
+    <div class="col-sm-4">
+        <img src="/static/images/pexels-photo-69896-large.jpeg" />
+    </div>
+    <div class="col-sm-4">
+        <img src="/static/images/pexels-photo-188934.jpeg" />
+    </div>
+    <div class="col-sm-4">
+        <img src="/static/images/pexels-photo-172262-large.jpeg" />
+    </div>
 </div>
 
 {% endblock content %}
