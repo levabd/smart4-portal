@@ -16,6 +16,8 @@ urlpatterns = [
         template_name='pages/stat.html'), name='stat'),
     url(r'^business/$', TemplateView.as_view(
         template_name='pages/business.html'), name='business'),
+    url(r'^userpro/$', TemplateView.as_view(
+        template_name='pages/userpro.html'), name='userpro'),
     url(r'^hub/$', TemplateView.as_view(
         template_name='pages/hub.html'), name='hub'),
     url(r'^partners/$', TemplateView.as_view(
